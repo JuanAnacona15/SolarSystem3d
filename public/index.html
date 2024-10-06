@@ -1,14 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>My first three.js app</title>
-		<link rel="stylesheet" href="scene3d.css">
-	</head>
-	<body>
-		<script type="module" src="main.js"></script>
-		<div id="cont3dscene">
 
+<head>
+	<meta charset="utf-8">
+	<title>Solar System</title>
+	<link rel="stylesheet" href="scene3d.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body data-bs-theme="dark">
+	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">ArkTech Builders</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+				aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="nav-link active" aria-current="page" href="#cont3dscene">Solar System</a>
+					<a class="nav-link" href="#contPlanets">Planets</a>
+					<a class="nav-link">Resources</a>
+				</div>
+			</div>
 		</div>
-	</body>
+	</nav>
+	<div class="row align-items-center" id="cont3dscene">
+		<div id="tags-container" class="align-items-center m-3 col">
+			<div class="row justify-content-between m-2" id="tag-Mars">Mars 
+				<a class="ms-2" style="background-color: #ff0000;" href="#MarsCard"></a>
+			</div>
+			<div class="row justify-content-between m-2" id="tag-Mercury">Mercury 
+				<a class="ms-2" style="background-color: #ffffff;" href="#MercuryCard"></a>
+			</div>
+			<div class="row justify-content-between m-2" id="tag-Venus">Venus 
+				<a class="ms-2" style="background-color: #ff8700;" href="#VenusCard"></a>
+			</div>
+			<div class="row justify-content-between m-2" id="tag-Earth">Earth
+				 <a class="ms-2" style="background-color: #0000ff;" href="#EarthCard"></a
+					></div>
+			<div class="row justify-content-between m-2" id="tag-Jupiter">Jupiter 
+				<a class="ms-2" style="background-color: #ff6100;" href="#JupiterCard">
+				</a>
+			</div>
+			<div class="row justify-content-between m-2" id="tag-Saturn">Saturn 
+				<a class="ms-2" style="background-color: #fff000;" href="#SaturnCard">
+				</a>
+			</div>
+			<div class="row justify-content-between m-2" id="tag-Uranus">Uranus 
+				<a class="ms-2" style="background-color: #7800ff;" href="#UranusCard">
+				</a>
+			</div>
+			<div class="row justify-content-between m-2" id="tag-Neptune">Neptune 
+				<a class="ms-2" style="background-color: #ff00aa;" href="#NeptuneCard">
+				</a>
+			</div>		
+		</div>
+	</div>
+
+	
+
+	<div class="container align-baseline" id="contPlanets">
+		<div class="col">
+			<div class="row m-5 gap-2">
+				<div class="card" id="MarsCard">
+					<div class="cont3dPlanet" id="cont3dMars">
+
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">Mars</h5>
+						<p class="card-text">Mars, better known as the Red Planet, has been a very captivating planet
+							for
+							scientists
+							due to its similarity and proximity to Earth. It has a thin atmosphere, mostly composed of
+							carbon
+							dioxide,
+							and is home to the tallest volcano in the solar system, Olympus Mons. Mars has a mass of
+							6.4185
+							×
+							10^23
+							kg,
+							a volume of 1.6318 × 10^11 km³, and a radius of 3389.5 kilometers.</p>
+						<a href="https://science.nasa.gov/mars/" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+				<div class="card" id="MercuryCard">
+					<div class="cont3dPlanet" id="cont3dMercury">
+
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">Mercury</h5>
+						<p class="card-text">Mercury is the smallest planet and the closest to the Sun. Its surface is
+							covered
+							in
+							craters
+							due to frequent collisions with meteors. Despite its proximity to the Sun, Mercury has
+							extreme
+							temperature
+							fluctuations, ranging from -173°C at night to 427°C during the day. It has a mass of 3.285 ×
+							10^23
+							kg
+							and
+							a radius of 2,439.7 kilometers.</p>
+						<a href="https://science.nasa.gov/mercury/" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+				<div class="card" id="VenusCard">
+					<div class="cont3dPlanet" id="cont3dVenus">
+
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">Venus</h5>
+						<p class="card-text">Venus is often called Earth’s twin because of their similar size and
+							composition,
+							but
+							it is
+							a very hostile place with a thick atmosphere that traps heat, making it the hottest planet
+							in
+							the
+							solar
+							system
+							with surface temperatures of 462°C. Venus rotates in the opposite direction of most planets,
+							and
+							its
+							day
+							is
+							longer than its year. It has a mass of 4.867 × 10^24 kg and a radius of 6,051.8 kilometers.
+						</p>
+						<a href="https://science.nasa.gov/venus/" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+			</div>
+			<div class="row m-5 gap-2">
+				<div class="card" id="EarthCard">
+					<div class="cont3dPlanet" id="cont3dEarth">
+
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">Earth</h5>
+						<p class="card-text">Earth is the only planet known to harbor life, with vast oceans and a
+							protective
+							atmosphere
+							that moderates temperatures. About 71% of Earth's surface is covered by water. The planet
+							has a
+							mass
+							of
+							5.972 ×
+							10^24 kg, a radius of 6,371 kilometers, and orbits the Sun at an average distance of 149.6
+							million
+							kilometers.</p>
+						<a href="https://science.nasa.gov/earth/" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+				<div class="card" id="JupiterCard">
+					<div class="cont3dPlanet" id="cont3dJupiter">
+
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">Jupiter</h5>
+						<p class="card-text">Jupiter is the largest planet in the solar system, known for its Great Red
+							Spot, a
+							massive
+							storm that has raged for centuries. Its atmosphere is mostly hydrogen and helium, and it has
+							79
+							moons,
+							including
+							Ganymede, the largest moon in the solar system. Jupiter has a mass of 1.898 × 10^27 kg and a
+							radius
+							of
+							69,911
+							kilometers.</p>
+						<a href="https://science.nasa.gov/jupiter/" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+				<div class="card" id="SaturnCard">
+					<div class="cont3dPlanet" id="cont3dSaturn">
+
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">Saturn</h5>
+						<p class="card-text">Saturn is famous for its beautiful ring system, made of ice, rock, and
+							dust. It
+							is
+							a
+							gas giant
+							composed mostly of hydrogen and helium. Saturn has over 80 moons, and one of them, Titan, is
+							larger
+							than
+							Mercury.
+							The planet has a mass of 5.683 × 10^26 kg and a radius of 58,232 kilometers.</p>
+						<a href="https://science.nasa.gov/saturn/" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+			</div>
+			<div class="row m-5 gap-2">
+				<div class="card" id="UranusCard">
+					<div class="cont3dPlanet" id="cont3dUranus">
+
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">Uranus</h5>
+						<p class="card-text">Uranus is unique in that it rotates on its side, possibly due to a
+							collision
+							with
+							another
+							celestial body. It is an ice giant with a pale blue-green color due to the methane in its
+							atmosphere.
+							Uranus
+							has a mass of 8.681 × 10^25 kg and a radius of 25,362 kilometers.</p>
+						<a href="https://science.nasa.gov/uranus/" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+				<div class="card" id="NeptuneCard">
+					<div class="cont3dPlanet" id="cont3dNeptune">
+
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">Neptune</h5>
+						<p class="card-text">Neptune is the farthest planet from the Sun and is known for its intense
+							blue
+							color. It
+							is a
+							windy ice giant, with the fastest winds in the solar system reaching up to 2,100 km/h.
+							Neptune
+							has
+							14
+							known
+							moons and a mass of 1.024 × 10^26 kg with a radius of 24,622 kilometers.</p>
+						<a href="https://science.nasa.gov/neptune/" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+	<script type="module" src="./scripts/SolarSystem.js"></script>
+	<script type="module" src="./scripts/Planet.js"></script>
+	<style>
+		#cont3dscene {
+			max-width: 100%;
+			max-height: 100%;
+			height: 500px;
+			width: 100%;
+			overflow: hidden;
+			padding: 0px;
+			margin: 0px;
+		}
+
+		#tags-container{
+			color: white;
+			width: max-content;
+			margin: auto;
+			position: absolute;
+			a{
+				width: 5rem;
+				border-radius: 10px;
+			}
+		}
+
+		.card {
+			width: 22rem;
+		}
+
+		.cont3dPlanet {
+			height: 20rem;
+			overflow: hidden;
+		}
+	</style>
+</body>
+
 </html>
