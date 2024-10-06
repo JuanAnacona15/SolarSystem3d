@@ -28,63 +28,39 @@
 	</nav>
 	<div class="row align-items-center" id="cont3dscene">
 		<div id="tags-container" class="align-items-center m-3 col">
-			<div class="row justify-content-between m-2" id="tag-Mars">Mars 
-				<a class="ms-2" style="background-color: #ff0000;" href="#MarsCard"></a>
-			</div>
-			<div class="row justify-content-between m-2" id="tag-Mercury">Mercury 
+			<div class="row justify-content-between m-2" id="tag-Mercury">Mercury
 				<a class="ms-2" style="background-color: #ffffff;" href="#MercuryCard"></a>
 			</div>
-			<div class="row justify-content-between m-2" id="tag-Venus">Venus 
+			<div class="row justify-content-between m-2" id="tag-Venus">Venus
 				<a class="ms-2" style="background-color: #ff8700;" href="#VenusCard"></a>
 			</div>
 			<div class="row justify-content-between m-2" id="tag-Earth">Earth
-				 <a class="ms-2" style="background-color: #0000ff;" href="#EarthCard"></a
-					></div>
-			<div class="row justify-content-between m-2" id="tag-Jupiter">Jupiter 
+				<a class="ms-2" style="background-color: #0000ff;" href="#EarthCard"></a>
+			</div>
+			<div class="row justify-content-between m-2" id="tag-Mars">Mars
+				<a class="ms-2" style="background-color: #ff0000;" href="#MarsCard"></a>
+			</div>
+			<div class="row justify-content-between m-2" id="tag-Jupiter">Jupiter
 				<a class="ms-2" style="background-color: #ff6100;" href="#JupiterCard">
 				</a>
 			</div>
-			<div class="row justify-content-between m-2" id="tag-Saturn">Saturn 
-				<a class="ms-2" style="background-color: #fff000;" href="#SaturnCard">
+			<div class="row justify-content-between m-2" id="tag-Saturn">Saturn
+				<a class="ms-2" style="background-color: #00ff78;" href="#SaturnCard">
 				</a>
 			</div>
-			<div class="row justify-content-between m-2" id="tag-Uranus">Uranus 
+			<div class="row justify-content-between m-2" id="tag-Uranus">Uranus
 				<a class="ms-2" style="background-color: #7800ff;" href="#UranusCard">
 				</a>
 			</div>
-			<div class="row justify-content-between m-2" id="tag-Neptune">Neptune 
+			<div class="row justify-content-between m-2" id="tag-Neptune">Neptune
 				<a class="ms-2" style="background-color: #ff00aa;" href="#NeptuneCard">
 				</a>
-			</div>		
+			</div>
 		</div>
 	</div>
-
-	
-
 	<div class="container align-baseline" id="contPlanets">
 		<div class="col">
 			<div class="row m-5 gap-2">
-				<div class="card" id="MarsCard">
-					<div class="cont3dPlanet" id="cont3dMars">
-
-					</div>
-					<div class="card-body">
-						<h5 class="card-title">Mars</h5>
-						<p class="card-text">Mars, better known as the Red Planet, has been a very captivating planet
-							for
-							scientists
-							due to its similarity and proximity to Earth. It has a thin atmosphere, mostly composed of
-							carbon
-							dioxide,
-							and is home to the tallest volcano in the solar system, Olympus Mons. Mars has a mass of
-							6.4185
-							×
-							10^23
-							kg,
-							a volume of 1.6318 × 10^11 km³, and a radius of 3389.5 kilometers.</p>
-						<a href="https://science.nasa.gov/mars/" class="btn btn-primary">Go somewhere</a>
-					</div>
-				</div>
 				<div class="card" id="MercuryCard">
 					<div class="cont3dPlanet" id="cont3dMercury">
 
@@ -131,8 +107,6 @@
 						<a href="https://science.nasa.gov/venus/" class="btn btn-primary">Go somewhere</a>
 					</div>
 				</div>
-			</div>
-			<div class="row m-5 gap-2">
 				<div class="card" id="EarthCard">
 					<div class="cont3dPlanet" id="cont3dEarth">
 
@@ -151,6 +125,29 @@
 							million
 							kilometers.</p>
 						<a href="https://science.nasa.gov/earth/" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+			</div>
+			<div class="row m-5 gap-2">
+				<div class="card" id="MarsCard">
+					<div class="cont3dPlanet" id="cont3dMars">
+
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">Mars</h5>
+						<p class="card-text">Mars, better known as the Red Planet, has been a very captivating planet
+							for
+							scientists
+							due to its similarity and proximity to Earth. It has a thin atmosphere, mostly composed of
+							carbon
+							dioxide,
+							and is home to the tallest volcano in the solar system, Olympus Mons. Mars has a mass of
+							6.4185
+							×
+							10^23
+							kg,
+							a volume of 1.6318 × 10^11 km³, and a radius of 3389.5 kilometers.</p>
+						<a href="https://science.nasa.gov/mars/" class="btn btn-primary">Go somewhere</a>
 					</div>
 				</div>
 				<div class="card" id="JupiterCard">
@@ -233,11 +230,45 @@
 				</div>
 			</div>
 		</div>
+	</div>
 
+	<div id="contAsteroids">
+		<!-- Carta de Bennu -->
+		<div class="card" style="width: 18rem;">
+			<img src="examplesrc.jpg" class="card-img-top" alt="Asteroide Bennu">
+			<div class="card-body">
+				<h5 class="card-title">(101955) Bennu</h5>
+				<p class="card-text">Diámetro: 500 metros. Bennu es famoso por ser el objetivo de la misión OSIRIS-REx
+					de la NASA, la cual trajo muestras del asteroide en 2023.</p>
+				<a href="#" class="btn btn-primary">Más información</a>
+			</div>
+		</div>
+
+		<!-- Carta de Apophis -->
+		<div class="card" style="width: 18rem;">
+			<img src="examplesrc.jpg" class="card-img-top" alt="Asteroide Apophis">
+			<div class="card-body">
+				<h5 class="card-title">(99942) Apophis</h5>
+				<p class="card-text">Diámetro: 370 metros. Apophis pasará extremadamente cerca de la Tierra en 2029, más
+					cerca que algunos satélites.</p>
+				<a href="#" class="btn btn-primary">Más información</a>
+			</div>
+		</div>
+
+		<!-- Carta de Eros -->
+		<div class="card" style="width: 18rem;">
+			<img src="examplesrc.jpg" class="card-img-top" alt="Asteroide Eros">
+			<div class="card-body">
+				<h5 class="card-title">(433) Eros</h5>
+				<p class="card-text">Diámetro: 16.8 km. Eros fue el primer asteroide en ser orbitado y aterrizado por
+					una nave espacial.</p>
+				<a href="#" class="btn btn-primary">Más información</a>
+			</div>
+		</div>
 
 	</div>
-	<script type="module" src="./scripts/SolarSystem.js"></script>
-	<script type="module" src="./scripts/Planet.js"></script>
+	<script type="module" src="./public/scripts/SolarSystem.js"></script>
+	<script type="module" src="./public/scripts/Planet.js"></script>
 	<style>
 		#cont3dscene {
 			max-width: 100%;
@@ -249,12 +280,13 @@
 			margin: 0px;
 		}
 
-		#tags-container{
+		#tags-container {
 			color: white;
 			width: max-content;
 			margin: auto;
 			position: absolute;
-			a{
+
+			a {
 				width: 5rem;
 				border-radius: 10px;
 			}

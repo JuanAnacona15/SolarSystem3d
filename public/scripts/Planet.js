@@ -3,12 +3,17 @@ import { OrbitControls } from 'three/examples/jsm/Addons.js';
 import { GLTFLoader } from 'three/examples/jsm/Addons.js';
 
 class Generate3dPlanet {
+    /*-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+    This class creates a 3D scene using the ThreeJS library 
+    and renders it in a div tag of the html document that has 
+    the id "cont3d", plus the name of the object.
+    -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ */
     constructor(name) {
-        this.name = name;
-        this.object3d = null;
-        this.scene = new THREE.Scene();
-        this.contScene = document.getElementById(`cont3d${name}`)
-        this.objectSize = 1;
+        this.name = name;  //Name object
+        this.object3d = null; //Object 3d 
+        this.scene = new THREE.Scene(); //Scene 3d
+        this.contScene = document.getElementById(`cont3d${name}`) //container of 3d Scene
+        this.objectSize = 1; //Size to object 3d
 
         this.scene.background = new THREE.Color(0, 0, 0)
 
@@ -39,40 +44,38 @@ class Generate3dPlanet {
 
     async Generate3dObject() {
         try {
-            // Cargar el archivo GLB usando GLTFLoader
+            // Load GLB Object
             const loader = new GLTFLoader();
             const object = await new Promise((resolve, reject) => {
                 loader.load(`./3dObjects/${this.name}.glb`, (gltf) => {
                     const model = gltf.scene;
-                    resolve(model); // Devolver el objeto cargado
+                    resolve(model); // Resolve the promise by returning the 3d model 
                 }, undefined, (error) => reject(error));
             });
-
-            // Ajustar posición y escala del objeto
             object.position.set(0, 0, 0);
             object.scale.set(this.objectSize, this.objectSize, this.objectSize);
 
-            // Retornar el objeto cargado
+            // Return load object
             return object;
 
         } catch (error) {
             console.error("Error al cargar el modelo GLB:", error);
-            throw error; // Propagar el error si ocurre
+            throw error;
         }
     }
 
     animate() {
-        requestAnimationFrame(() => this.animate()); // Llamar a la función en cada cuadro
+        requestAnimationFrame(() => this.animate())//Call the function in each frame
 
-        // Actualizar los controles
+        // Update controls
         this.controls.update();
 
-        // Renderizar la escena
+        //Render scene
         this.renderer.render(this.scene, this.camera);
     }
 }
 
-
+//Create planets 3d
 const Mars = new Generate3dPlanet("Mars");
 Mars.initialize()
 

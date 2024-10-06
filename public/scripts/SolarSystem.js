@@ -3,13 +3,11 @@ import { OrbitControls } from 'three/examples/jsm/Addons.js';
 import { OrbitalEllipse } from './CelestialTrayectories';
 
 const content = document.getElementById("cont3dscene")
-// Crear la escena
 const scene = new THREE.Scene();
-// Crear la cámara
+
 const camera = new THREE.PerspectiveCamera(75, content.offsetWidth / content.offsetHeight, 0.1, 1000);
 camera.position.set(0, 10, 30);
 
-// Crear el renderizador
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(content.offsetWidth, content.offsetHeight);
 content.appendChild(renderer.domElement);
@@ -17,16 +15,14 @@ content.appendChild(renderer.domElement);
 const sun = new THREE.Mesh(new THREE.SphereGeometry(0.2), new THREE.MeshBasicMaterial({ color: 0xffff00 }));
 scene.add(sun)
 
-// Cantidad de estrellas que quieres en la escena
+// Create stars
 const numStars = 5000;
 
-// Crear la geometría de las estrellas
 const starsGeometry = new THREE.BufferGeometry();
-const starPositions = new Float32Array(numStars * 3); // 3 valores por estrella (x, y, z)
+const starPositions = new Float32Array(numStars * 3);
 
-// Asignar posiciones aleatorias a las estrellas
 for (let i = 0; i < numStars * 3; i += 3) {
-    const x = (Math.random() - 0.5) * 2000; // Aleatorio entre -1000 y 1000
+    const x = (Math.random() - 0.5) * 2000; 
     const y = (Math.random() - 0.5) * 2000;
     const z = (Math.random() - 0.5) * 2000;
 
@@ -34,25 +30,23 @@ for (let i = 0; i < numStars * 3; i += 3) {
     starPositions[i + 1] = y;
     starPositions[i + 2] = z;
 }
-
-// Agregar las posiciones a la geometría de las estrellas
 starsGeometry.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
 
-// Crear el material para las estrellas
 const starsMaterial = new THREE.PointsMaterial({
-    color: 0xffffff, // Color blanco para las estrellas
-    size: 1,         // Tamaño de los puntos
-    sizeAttenuation: true, // Los puntos se reducen con la distancia
+    color: 0xffffff,
+    size: 1,         
+    sizeAttenuation: true,
     transparent: true
 });
 
-// Crear el objeto de partículas (las estrellas)
 const starField = new THREE.Points(starsGeometry, starsMaterial);
-
-// Añadir las estrellas a la escena
 scene.add(starField);
 
-
+/**
+ * Instantiate the object so that the parabolic trajectory is 
+ * created and also a sphere that will travel through the positions 
+ * of the parabola
+ */
 const MercuryOrbit = new OrbitalEllipse(
     "Mercury",
     0.387098,
@@ -126,7 +120,7 @@ const SaturnOrbit = new OrbitalEllipse(
     113.665,
     339.392,
     9.64,
-    0xfff000
+    0x00ff78
 );
 scene.add(SaturnOrbit.getEllipse());
 
@@ -154,51 +148,45 @@ const NeptuneOrbit = new OrbitalEllipse(
 );
 scene.add(NeptuneOrbit.getEllipse());
 
-//Create second 3d object
+/**
+ * Instantiate the 3D spheres that will simulate being the planets that travel the parabolic path.
+*/
 const Neptune = await NeptuneOrbit.getSphere()
 const NeptuneTag = document.getElementById(`tag-${NeptuneOrbit.name}`)
 scene.add(Neptune)
 
-//Create second 3d object
 const Uranus = await UranusOrbit.getSphere()
 const UranusTag = document.getElementById(`tag-${NeptuneOrbit.name}`)
 scene.add(Uranus)
 
-//Create second 3d object
 const Saturn = await SaturnOrbit.getSphere()
 const SaturnTag = document.getElementById(`tag-${NeptuneOrbit.name}`)
 scene.add(Saturn)
 
-//Create second 3d object
 const Jupiter = await JupiterOrbit.getSphere()
 const JupiterTag = document.getElementById(`tag-${NeptuneOrbit.name}`)
 scene.add(Jupiter)
 
-//Create second 3d object
 const Mars = await MarsOrbit.getSphere()
 const MarsTag = document.getElementById(`tag-${NeptuneOrbit.name}`)
 scene.add(Mars)
 
-//Create second 3d object
 const Earth = await EarthOrbit.getSphere()
 const EarthTag = document.getElementById(`tag-${NeptuneOrbit.name}`)
 scene.add(Earth)
 
-//Create second 3d object
 const Venus = await VenusOrbit.getSphere()
 const VenusTag = document.getElementById(`tag-${NeptuneOrbit.name}`)
 scene.add(Venus)
 
-//Create second 3d object
 const Mercury = await MercuryOrbit.getSphere()
 const MercuryTag = document.getElementById(`tag-${NeptuneOrbit.name}`)
 scene.add(Mercury)
 
 camera.position.z = 60;
 const controls = new OrbitControls(camera, renderer.domElement);
-const raycaster = new THREE.Raycaster();
-const mouse = new THREE.Vector2();
-// Animación
+
+//Counter for the array of planet positions
 var cont = 0;
 var contNeptune = 0;
 var contUranus = 0;
@@ -238,6 +226,9 @@ function updateLabels() {
 
 
 function animate() {
+    /**
+     * Change the position of the objects in each frame to create the animation running along the parabola
+     */
     if (contNeptune <= NeptuneOrbit.getElipsePoints().length - 2) {
         Neptune.position.x = NeptuneOrbit.getElipsePoints()[contNeptune].x
         Neptune.position.y = NeptuneOrbit.getElipsePoints()[contNeptune].y
